@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre no teclado</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap3+++4.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="../font-awesome/css/v4-shims.min.css">
+    <link rel="stylesheet" href="../font-awesome/css/fontawesome.min.css">
+</head>
+<body class="bg-dark">
+    
+    <div class="container-fluid tudo">
+        <header class="text-white text-center fixed-top">
+            <ul class="list-inline">
+                <li>Jogador:</li><span id="nomeJog" class="text-primary"></span>
+                <li>Letras Apanhadas:</li><span id="letrasApanhadas" class="text-success">0 / </span><span id="LetrasAApanhar" class="text-success"></span>
+                <li>Tempo:</li><span id="tempoR" class="text-info"></span>
+            </ul>
+        </header>
+        <div class="progresso" style="width:100%;"></div>
+    </div>
+
+    <div class="modal fade" id="modalInicio">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text-center m-0">Informações do Jogo</h4>
+                </div>
+                <div class="modal-body pb-1">
+                    <div>
+                        <div class="form-group w-75">
+                            <label for="nomeJ"><span class="fa fa-lg fa-user"></span> Seu nome</label>
+                            <input type="text" class="form-control" id="nomeJ" placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group w-75">
+                            <label for="totLet"><span class="fa fa-lg fa-book"></span> Total de Letras a apanhar</label>
+                            <input type="number" class="form-control w-50" min="2" id="totLet">
+                        </div>
+                        <div class="form-group w-75">
+                            <label for="tempQueda"><span class="glyphicon fa-lg glyphicon-time"></span> Tempo da Queda de cada letra</label>
+                            <input type="number" class="form-control w-25" min="1" step="0.2" id="tempQueda">
+                        </div>
+                        <hr class="mb-3">
+                        <button class="btn btn-primary mb-3">Começar o jogo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalPerda">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger">
+                <div class="modal-body text-white">
+                    <h3 class="m-0 text-center">Pena! Você perdeu</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalGanho">
+        <div class="modal-dialog">
+            <div class="modal-content bg-info text-white">
+                <div class="modal-body">
+                    <h3 class="m-0 text-center">Parabéns! Você Ganhou</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

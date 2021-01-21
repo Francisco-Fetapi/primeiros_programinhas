@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Tabuada de n ate m</title>
+<style>
+*{ padding:0px; margin:0px; font-family:Georgia, "Times New Roman", Times, serif;}
+#num1,#num2{
+margin-bottom:10px;
+border-width:1.9spx;
+border-radius:8px;
+width:1.8cm;
+height:0.59cm;
+outline:none;
+font-size:18px;
+}
+#num1:hover,#num2:hover{
+background-color:#EEEEEE;
+}
+
+#h1{ background-color:#FFFFFF;}
+#btn{
+background-color:#666666;
+width:2.4cm;
+height:0.95cm;
+font-size:17px;
+border-radius:18px;
+border-color:black;
+outline:none;
+margin-right:80px;
+margin-bottom:6px;
+margin-left:8px;
+}
+#btn:active{
+font-size:19px;
+background-color:#0066FF;
+}
+#formu{
+margin-left:12px;
+transition-duration:2s;
+background-color:#CCCCCC;
+border:2px solid black;
+border-radius:22px;
+}
+#formu:hover{
+transition-duration:3s;
+background-color:#8B8B8B;
+}
+body{ background-color:#D6D6D6;}
+#pp{ font-size:23px; }
+#p{ font-size:50px;}
+
+#p:hover{
+background-color:#333333;
+}
+#div{
+margin-left:12px;
+padding:0px;
+background-color:#6A6A6A;
+border-radius:12px;
+border:2px solid black;
+}
+</style>
+</head>
+
+<body>
+<fieldset id="formu"><legend><h2>Tabuada de N</h2> </legend>
+<label>Tabuada de: <input type="text" id="num1" value="1"  /></label>
+<br />
+<label>Calcular ate: <input type="text" id="num2" value="12" /></label>
+<br />
+<br />
+<input type="submit" id="btn" value="Multiplicar" onclick="OperarM()"/>
+<input type="submit" id="btn" value="Dividir" onclick="OperarD()"/>
+</fieldset>
+<br />
+<br />
+
+<fieldset id="div"> 
+</fieldset>
+
+
+</body>
+
+
+<script>
+
+function OperarM(){
+
+var m = document.getElementById('num2').value;
+var num1 = document.getElementById('num1').value;
+m = Number(m);
+var res;
+res=Number(res);
+document.getElementById('div').innerHTML+= '<center><h1 id="h1"> Tabuada de '+num1+' (ate '+m+')</h1></center>'; 
+m++;
+for(var c = 1;c<m;c++){
+res=num1*c;
+document.getElementById('div').innerHTML+= '<p id="p">'+num1+'  x '+c+
+' = '+res+'</p>';
+
+}
+
+}
+
+function OperarD(){
+
+var m = document.getElementById('num2').value;
+var num1 = document.getElementById('num1').value;
+m = Number(m);
+var res;
+res=Number(res);
+document.getElementById('div').innerHTML+= '<center><h1 id="h1"> Tabuada de '+num1+' (ate '+m+')</h1></center>'; 
+m++;
+for(var c = 1;c<m;c++){
+res=num1/c;
+document.getElementById('div').innerHTML+= '<p id="p">'+num1+'  / '+c+
+' = '+res+'</p>';
+
+}
+
+}
+
+</script>
+</html>

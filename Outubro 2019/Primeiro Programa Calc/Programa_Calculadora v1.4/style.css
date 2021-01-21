@@ -1,0 +1,207 @@
+	/* Created Using Easy HTML v1.2.5 */
+	/* https://play.google.com/store/apps/details?id=ak.andro.easyhtml */
+	
+		*{
+	  
+	  padding:0px;
+	  margin:0px;
+	  }
+	
+	body{
+	  background-color:#3aa975;
+	  margin:0px;
+	  padding:0px;
+	  }
+	
+	#div2{
+	  width:100%;
+	  background-color: #35cbae;
+	  height:55%;
+	  margin-bottom:0;
+	  padding-bottom:0;
+	  
+	  }
+	
+	#titulo{
+	  background-color:#4cdefe;
+	  text-align:center;
+	  width:50%;
+	  margin:0 auto 0 auto;
+	
+	  }
+	
+	#titulo2{
+	  background-color:#0096ff;
+	  text-align:left;
+	  width:50%;
+	  
+	  
+	  }
+	
+	#titulo3{
+	  background-color:#ba0404;
+	  text-align:left;
+	  width:50%;
+	  
+	  
+	  }
+	
+	
+	#num1 , #num2{
+	  transition-duration:2s;
+	  height:1cm;
+	  width:6cm;
+	  outline:none;
+	  font-size:30px;
+	  border-color:black;
+	  }
+	
+	#num1{
+	  color:#0096ff;
+	  }
+	#num2{
+	  color:#ba0404;
+	  }
+	
+	#num1:focus,#num2:focus{
+	  transition-duration:2s;
+	  background-color:#ccd9d8;
+	  height:1cm;
+	  width:6cm;
+	  border-radius:25px;
+	  outline:none;
+	  font-size:35px;
+	  }
+	
+	#Soma , #Subtracao , #Multiplicacao , #Divisao{
+	 
+	  width:60%;
+	  height:40px;
+	  text-align:center;
+	  margin-left:15%;
+	  margin-bottom:15px;
+	  outline:none;
+	  border-radius:30px;
+	  font-size:20px;
+	  color:white;
+	  border-color:black;
+	  }
+	
+	#Soma:active, #Subtracao:active, #Multiplicacao:active,
+	#Divisao:active{
+	 
+	  width:63%;
+	  font-size:28px;
+	}
+	#Soma{
+	  background-color:#c5d309;
+	 
+	  }
+	#Soma:active{
+	  background-color:#f9ff00;
+	  }
+	
+	#Subtracao{
+	  
+	  background-color:#44b2cf;
+	  }
+	#Subtracao:active{
+	  background-color:#00e2ff;
+	  }
+	
+	
+	#Multiplicacao{
+	  background-color:#4810c0;
+	  }
+	#Multiplicacao:active{
+	  background-color:#5200ff;
+	  }
+	
+	
+	#Divisao{
+	  background-color:#be0d0d;
+	  }
+	#Divisao:active{
+	  background-color:red;
+	  }
+	
+	#div3{
+	  margin-top:0;
+	  padding-top:0;
+	  margin-bottom:0;
+	  padding-bottom:0;
+	  float:top;
+	  height:22%;
+	  background-color: #ffffff;
+	  }
+	
+	#result{
+	  font-size:40px;
+	  }
+	
+	#btn , #btn1 , #btn2{
+	  background-color:#8e8854;
+	  width:100px;
+	  height:1.5cm;
+	  outline:none;
+	  border-radius:20px;
+	  font-size:18px;
+	  margin-left:15px;
+	  color:white;
+	  border-color:black;
+	  }
+	
+	#btn:active,#btn1:active,#btn2:active{
+	  
+	  
+	  font-size:21px;
+	  height:1.1cm;
+	 
+	  }
+	#btn1{
+	  background-color:#5447a6;
+	  }
+	#btn2{
+	  background-color:#33e5e1;
+	}
+	
+	
+	#div4, #divh{
+	  transition-duration:2s;
+	  margin:0px;
+	  padding:0px;
+	  background-color:#3aa975;
+	  
+	  
+	  }
+	
+	.h1{
+	  font-size:20px;
+	  color:black;
+	  margin-top:0;
+	  text-decoration:underline;
+	  }
+	
+	#hc{ 
+	  font-size:35px;
+	  color:white;
+	  text-decoration:underline;
+	  
+	  
+	  }
+	
+	
+	.h1:hover{ 
+	  font-size:25px;
+	  color:white;
+	  text-decoration:underline;
+	  
+	  
+	  }
+	/*
+	#div4:hover, #divh:hover{
+	  transition-duration:4s;
+	  background-color: #3aa975;   /*#2010c4; */
+	  /*text-transform:uppercase; 
+	  } 
+	*/ 

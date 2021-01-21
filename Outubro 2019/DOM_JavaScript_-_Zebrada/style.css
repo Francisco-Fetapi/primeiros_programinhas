@@ -1,0 +1,67 @@
+/* Created Using Easy HTML v1.2.5 */
+/* https://play.google.com/store/apps/details?id=ak.andro.easyhtml */
+
+*{
+  margin:0;
+  padding:0;
+  }
+
+#tx{
+  color:red;
+  text-transform:uppercase;
+  }
+
+center h1{
+  background-color:#0bcfb3;
+  font-size:30px;
+  margin-bottom:0px;
+  margin-top:0px;
+  text-transform:uppercase;
+  }
+
+.zebrada{
+  background-color: silver;
+ }
+
+#btn1,#btn2{
+  height:0.89cm;
+  font-size:16px;
+  border-radius:6px;
+  outline:none;
+  font-size:18px;
+  border-color:white;
+  }
+
+#nome,#senha{
+  height:27px;
+  font-size:20px;
+  width:160px;
+  border-radius:6px;
+  outline:none;
+  }
+
+
+#nome{
+  margin-bottom:6px;
+  }
+
+#senha{
+  
+  
+  
+  }
+
+
+#div{
+  clear:both;
+  background-color: #0a77cc;
+  height:;
+  width:;
+  margin-bottom:0px;
+  }
+
+
+
+table{
+  float:left;
+  }

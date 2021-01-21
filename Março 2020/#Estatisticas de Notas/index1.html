@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatística de notas</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+   
+
+    <div id="inicio">
+        <h1>Estatística de notas</h1>
+
+        <p class="texto1" style="margin-top:44px;">Seu nome: 
+            <input type="text" class="n2" id="nomeUs" size="16" placeholder="Campo não obrigátorio">
+        </p>
+
+        <p class="texto1">Número de disciplinas:
+            <input type="number" class="n2" id="numDisc" max="18" min="2" style="width: 66px;">
+        </p>
+        <input type="button" value="Iniciar Análise" class="btn4" onclick="comeca()">
+    </div>
+
+    <div id="results">
+
+        <div>
+            <h1 id="tituloD">Disciplina 1</h1>
+            <p>Nome da disciplina:
+                <input type="text" class="n2" id="nomeDisc" size="9">
+            </p>
+            <p>Nota da disciplina:
+                <input type="number" class="n2" id="notaDisc" max="20" min="0" style="width: 66px;">
+                <div class="avisoT">O campo NOME DA DISCIPLINA não pode estar vazio, e a nota tem estar entre 0 e 20</div>
+                <input type="button" class="btn4" value="Registar" style="margin-top: 12px;" onclick="registar()">
+            </p>
+        </div>
+
+    </div>
+
+    <div class="detalhes">
+        <h1>Resultados da Análise</h1>
+        
+    </div>
+    <br/><br/>
+    <div class="informa">
+        <h1>Detalhes dos Dados</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Maior Nota</th>
+                    <th>Menor Nota</th>
+                    <th>Média das notas</th>
+                </tr>
+            </thead>
+
+            <tbody>
+               <!-- aqui tera dados. serao inseridos pelo script -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="consulta">
+
+        <p class="texto1">Pesquisar por:
+        </p>
+        <p>
+            <input type="radio" name="c" id="e1" value="disc" checked onchange="pesquisaPor(this.value,txtBusca)"><label for="e1">Disciplina</label>
+            <input type="radio" name="c" id="e2" value="nota" onchange="pesquisaPor(this.value,txtBusca)"><label for="e2">Nota</label>
+        </p>
+        <p>
+            <input type="text" class="n2" id="txtBusca" size="14" placeholder="Nome da Disciplina">
+            <input type="button" value="Pesquisar" class="btn btn2" onclick="pesquisar(txtBusca.value)">
+        </p>
+    </div>
+
+    <div class="resultsBusca">
+        <h1>Resultado/s da Busca</h1>
+
+
+    </div>
+    <footer>
+        <p>&copy;Exercicios Francisco Fetapi</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

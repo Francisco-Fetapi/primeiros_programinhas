@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+body{
+background-color:#3399FF;
+}
+#titulo{
+font-size:20px;
+width:100%;
+}
+#cand1,#cand2,#cand3{
+padding:auto;
+margin:auto;
+width:100%;
+height:0.75cm;
+background-color:#000066;
+outline:none;
+font-size:15px;
+color:#FFFFFF;
+}
+#cand1:active,#cand2:active,#cand3:active{
+background-color:#000099;
+font-size:20px;
+}
+#f1{
+background-color:#0099CC;
+}
+p{
+font-size:24px;
+}
+
+table {
+border-spacing: 0.2em;
+border-collapse: separate;
+}
+thead {
+background-color: #999;
+}
+th {
+background:#99CCFF;
+font-weight: bold;
+padding: 0.3em 1em;
+text-align: center;
+}
+th:hover{
+background-color:#0066CC;
+}
+td {
+padding: 0.3em;
+}
+tr:nth-child(2n) {
+background-color: #CCC;
+}
+td:first-child {
+font-style: italic;
+}
+
+
+</style>
+</head>
+
+<body>
+<fieldset id="f1"> <legend>
+<p id="titulo">Programa de Contagem de Votos</p> </legend>
+<p id="numTV">Numero Total de Votantes: </p>
+<p id="numReal">Numero de Votos Realizados: </p>
+<p id="numRes">Numero de Votos Restantes: </p>
+</fieldset>
+<br />
+<fieldset><legend><p id="titulo">Lista dos Candidatos</p></legend>
+<table>
+  <tr>
+    <th>Candidato 1</th>
+    <th>Candidato 2</th>
+    <th>Candidato 3 </th>
+  </tr>
+  <tr>
+    <td id="c1"></td>
+    <td id="c2"></td>
+    <td id="c3"></td>
+  </tr>
+   <tr>
+    <td><input type="button" value="Votar" id="cand1" onclick="votar1()"/></td>
+    <td><input type="button" value="Votar" id="cand2" onclick="votar2()"/></td>
+    <td><input type="button" value="Votar" id="cand3" onclick="votar3()"/></td>
+  </tr>
+</table>
+</fieldset>
+
+<script>
+
+var numV=window.prompt("Numero Total de Votantes: ");
+var numReal=0;
+var numRes=numV;
+document.getElementById('numTV').innerHTML+=numV;
+document.getElementById('numReal').innerHTML+=numReal;
+document.getElementById('numRes').innerHTML+=numRes;
+
+var ptc1=0;
+var ptc2=0;
+var ptc3=0;
+document.getElementById('c1').innerHTML+=ptc1;
+document.getElementById('c2').innerHTML+=ptc2;
+document.getElementById('c3').innerHTML+=ptc3;
+var ganhador=" "; 
+
+function votar1(){
+
+if(numRes==0){
+alert("O numero de votantes terminou");
+numRes=0;
+if ((ptc1>ptc2) && (ptc1>ptc3)){
+  ganhador='Candidato 1';
+}
+else if((ptc2>ptc1) && (ptc2>ptc3)){
+ ganhador='Candidato 2' ;
+}
+else if((ptc3>ptc1) && (ptc3>ptc2)){
+ ganhador='Candidato 3';
+ }
+else{
+document.getElementById('res').innerHTML="Resultado: Houve um Empate";
+}
+document.getElementById('res').innerHTML="Resultado: O vencedor foi o "+ganhador+"!!!";
+}
+
+else{
+ptc1++;
+numReal++;
+numRes=numRes-1;
+document.getElementById('c1').innerHTML=ptc1;
+document.getElementById('numTV').innerHTML='<p id="numTV">Numero Total de Votantes: '+numV+ '</p>';
+document.getElementById('numReal').innerHTML='<p id="numReal">Numero de Votos Realizados: '+numReal+'</p>';
+document.getElementById('numRes').innerHTML='<p id="numRes">Numero de Votos Restantes: '+numRes+ '</p>';
+}
+}
+
+function votar2(){
+if(numRes==0){
+alert("O numero de votantes terminou");
+numRes=0;
+if ((ptc1>ptc2) && (ptc1>ptc3)){
+  ganhador='Candidato 1';
+}
+else if((ptc2>ptc1) && (ptc2>ptc3)){
+ ganhador='Candidato 2' ;
+}
+else if((ptc3>ptc1) && (ptc3>ptc2)){
+ ganhador='Candidato 3';
+ }
+else{
+document.getElementById('res').innerHTML="Resultado: Houve um Empate";
+}
+document.getElementById('res').innerHTML="Resultado: O vencedor foi o "+ganhador+"!!!";
+}
+else{
+ptc2++;
+numReal++;
+numRes=numRes-1;
+document.getElementById('c2').innerHTML=ptc2;
+document.getElementById('numTV').innerHTML='<p id="numTV">Numero Total de Votantes: '+numV+ '</p>';
+document.getElementById('numReal').innerHTML='<p id="numReal">Numero de Votos Realizados: '+numReal+'</p>';
+document.getElementById('numRes').innerHTML='<p id="numRes">Numero de Votos Restantes: '+numRes+ '</p>';
+}
+}
+
+function votar3(){
+if(numRes==0){
+alert("O numero de votantes terminou");
+numRes=0;
+if ((ptc1>ptc2) && (ptc1>ptc3)){
+  ganhador='Candidato 1';
+}
+else if((ptc2>ptc1) && (ptc2>ptc3)){
+ ganhador='Candidato 2' ;
+}
+else if((ptc3>ptc1) && (ptc3>ptc2)){
+ ganhador='Candidato 3';
+ }
+else{
+document.getElementById('res').innerHTML="Resultado: Houve um Empate";
+}
+document.getElementById('res').innerHTML="Resultado: O vencedor foi o "+ganhador+"!!!";
+}
+else{
+ptc3++;
+numReal++;
+numRes=numRes-1;
+document.getElementById('c3').innerHTML=ptc3;
+document.getElementById('numTV').innerHTML='<p id="numTV">Numero Total de Votantes: '+numV+ '</p>';
+document.getElementById('numReal').innerHTML='<p id="numReal">Numero de Votos Realizados: '+numReal+'</p>';
+document.getElementById('numRes').innerHTML='<p id="numRes">Numero de Votos Restantes: '+numRes+ '</p>';
+}
+}
+</script>
+
+<h2 id="res">  </h2>
+</body

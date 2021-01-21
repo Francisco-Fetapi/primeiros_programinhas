@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz Triangular</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div id="exercicio">
+        <div id="DescEx">
+            <h1>EXERCÍCIO</h1>
+            <p> <span class="nEx">8.</span>Crie um algoritmo que receba uma quantidade desconhecida de valores. Os valores inseridos não podem ser iguais</p>    
+        </div>
+    </div>
+
+    <section class="principal">
+        <p>Quantidade de linhas:
+            <input type="number" min="0" class="cxTexto" id="lin">
+        </p>
+        <p>Quantidade de colunas:
+            <input type="number" min="0" class="cxTexto" id="col" disabled>
+        </p>
+            <button class="botao">Gerar Tabela</button>
+    </section>
+
+    <section class="principal telaRes">
+
+        <table>
+            <caption>Tabela de valores</caption>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+
+        <p>
+            Inserir: <input type="number" id="numAdd" class="cxTexto" style="width:10%;"> 
+            na Linha:<input type="number" id="linAdd" class="cxTexto" style="width:10%"> 
+            e na coluna:<input type="number" id="colAdd" class="cxTexto" style="width:10%">
+        </p>
+            <button class="botao">Inserir Valor na Tabela</button>
+    </section>
+
+    <footer>
+        <p>&copy;Exercicios Francisco Fetapi</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

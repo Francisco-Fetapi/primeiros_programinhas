@@ -1,0 +1,13 @@
+Depois da vez do jog1 , o jog2 digitou na sua palavra de teste "gente" e lhe foi informado que tem 2 letras da palavra secreta do jog1(Jesus), veio 2 letras por causa dos dois e's em "gente".
+
+E ao adivinhar a palavra ele digita na ultima caixa de texto , claro que eu mesmo porque ja conheço a tal palavra acertei de cara!
+
+se não a caixa de texo ficaria vermelha.
+a função que valida se o texto inserido é igual ao do oponente é executado sempre que se digitar alguma coisa neste TextBox ,não sendo necessario clicar em algum botão.
+
+Quando alguem ganha é mostrado este alert de parabens.
+
+e depois o jogo reinicia!
+
+61
+62

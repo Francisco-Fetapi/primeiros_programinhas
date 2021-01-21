@@ -1,0 +1,27 @@
+body{
+    background: url('back.png');
+    background-size: cover;
+    overflow: hidden;
+}
+#jogador{
+    width:62px;
+    height:62px;
+    background: url('nave.png') no-repeat;
+    background-size:contain;
+    position: absolute;
+    transition: all .05s ease;
+}
+.tiro{
+   width:15px; 
+   height:15px;
+   background: url('tiro.png') no-repeat;
+   background-size:contain;
+   position: absolute;
+}
+.bola{
+    width:32px;
+    height:32px;
+    background: url('bola.png') no-repeat;
+    background-size:contain;
+    position: absolute;
+}

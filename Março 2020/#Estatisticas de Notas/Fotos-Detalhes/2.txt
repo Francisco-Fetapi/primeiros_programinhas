@@ -1,0 +1,8 @@
+﻿Na tela inicial é digitado a quantidade de disciplinas que serão analisadas.
+
+Ai tem validação de dados,mas não convém falar sobre isso pra não tornar a msg longa.
+
+clicando em "Iniciar Analise" o programa vai começar pedindo que se digite a nota da "Disciplina 1" e isso até a ultima disciplina.No caso vou apenas mostrar a 1^ e a Ultima.
+
+2
+3

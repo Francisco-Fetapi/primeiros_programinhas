@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converte Moedas</title>
+
+    <style>
+        @charset "utf-8";
+       
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.582);
+            margin-left:auto;
+            margin-right: auto;
+            font:normal 16pt arial;
+            overflow-x: hidden;
+         }
+         section{
+            border-radius: 4px;
+            padding:6px;
+            background-color: rgba(11, 144, 252, 0.801);
+            width:95%;  
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534);
+        }
+        #exercicio{
+            margin-top: 2%;
+            padding: 6px 11px;
+        }
+        #DescEx{
+            text-shadow: 2px 1px 1px black;
+            padding: 16px;
+            background: rgb(45, 143, 182);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        #DescEx h1{
+            font-weight: 600px;
+            background-color: rgba(0, 0, 0, 0.466);
+            text-align: left;
+            margin: -16px;
+            margin-bottom: 2px;
+        }
+        #DescEx p{
+            font-size:19px;
+        }
+        #DescEx p span{
+            font-size:26px;
+            color: red;
+        }
+        .principal{
+            padding:14px 22px;
+            color: white;
+            line-height: 2.1;
+        }
+        .cxTexto{
+            padding:4px 6px;
+            font-size:16px;
+            background-color: rgba(0, 0, 0, 0.719);
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        .cxTexto:focus{
+            background-color: rgba(0, 0, 0, 0.911);
+        }
+        .botao{
+            width:100%;
+            padding: 12px;
+            text-align: center;
+            color: rgb(0, 253, 241);
+            font-weight: 600;
+            background-color: rgba(0, 204, 255, 0.295);
+            border: 4px solid rgba(0, 204, 255, 0.644);
+            border-radius: 4px;
+            font-size:16px;
+            box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.349);
+            margin-left: -12px;
+            transition: background-color .1s ease-in;
+        }
+        .botao:hover{
+            color: white;
+            background-color: rgba(0, 204, 255, 0.87);
+        }
+        .botao:active{
+            background-color: rgba(3, 3, 0, 0.589);
+        }
+        .telaRes{
+            line-height:1.9;
+            font-size:smaller;
+            display: none;
+        }
+        .telaRes span{
+            text-shadow: 4px 1px 2px rgba(0, 0, 0, 0.288);
+            font-size: 18pt;
+            font-weight: 700;
+        }
+        h4{
+            padding: 2px 4px;
+            margin: -14px;
+            margin-bottom: 0px;
+            background-color: rgba(0, 0, 0, 0.212);
+        }
+        label{
+            color: white;
+            font-size: 14px;
+            padding: 9px;
+            border-radius: 10%;
+            width:60px;
+            height: 60px;
+            border: 1px solid rgba(0, 0, 0, 0.308);
+        }
+        label:hover{
+            background-color: rgba(0, 0, 0, 0.534);
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        input[type="radio"]:checked + label{
+            background-color: rgba(0, 0, 0, 0.836);
+            border-color:white;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="exercicio">
+        <div id="DescEx">
+            <h1>Converte Moedas</h1>
+            <p><span>Ex.:7</span>
+                Faça um algoritmo que lê um valor monetario e permita que o mesmo seja convertido de moeda para outra!
+            </p>
+        </div>
+
+    </div>
+
+    <section class="principal">
+        <h4>Escolha a Unidade:</h4>
+        <p>
+            <input type="radio" id="d" name="moeda1" checked><label for="d">Dolar</label>
+            <input type="radio" id="k" name="moeda1" ><label for="k">Kwanza</label>
+            <input type="radio" id="r" name="moeda1" ><label for="r">Reais</label>
+            <input type="radio" id="e" name="moeda1" ><label for="e">Euro</label>
+        </p>
+        
+        <p>O Dinheiro:
+            <input type="number" class="cxTexto" id="din" placeholder="Valor monetario">
+        </p>
+        
+        <h4 style="margin-top: 8px;">Converter para:</h4>
+        <p>
+            <input type="radio" id="d1" name="moeda2" checked><label for="d1">Dolar</label>
+            <input type="radio" id="k1" name="moeda2" ><label for="k1">Kwanza</label>
+            <input type="radio" id="r1" name="moeda2" ><label for="r1">Reais</label>
+            <input type="radio" id="e1" name="moeda2" ><label for="e1">Euro</label>
+        </p>
+            <button class="botao" onclick="converteMoedas(din.value)">Converter Dinheiro</button>
+    </section>
+
+    <section class="principal telaRes">
+        <p><span id="dinExt"></span></p>
+    </section>
+
+    <script>
+            var moedaEscolhida1 = "USD";
+            var moedaEscolhida2 = "KZ";
+
+       const moeda1 = document.getElementsByName('moeda1');
+       const moeda2 = document.getElementsByName('moeda2');
+       
+       for(var c = 0;c <moeda1.length;c++){
+            moeda1[c].addEventListener('click',escolhaMoeda1);
+        }
+        for(var c = 0;c <moeda2.length;c++){  
+            moeda2[c].addEventListener('click',escolhaMoeda2);
+        }
+
+       function converteMoedas(dinheiro){
+           var soma = 0;
+
+           document.querySelector('#dinExt').innerHTML = "";
+           
+            if(dinheiro == "" ){
+                window.alert('Preencha os dados corretamente! \nInsira Apenas numeros! \n Insira virgula nos numeros decimais');
+            }
+            else{
+               if(Math.round(dinheiro) != dinheiro){
+                   window.alert("O Dinheiro inserido é uma dizima! por isso vamos arredondá-lo")
+                   var novoDin = Math.round(dinheiro);
+                   document.querySelector('#din').value = novoDin;    
+               }
+               else{                
+                        document.querySelector('#dinExt').innerHTML += `${dinheiro.fontcolor('#888')} ${moedaEscolhida1.fontcolor('#888')} equivale à ${cambiar(dinheiro,moedaEscolhida1,moedaEscolhida2).fontcolor('#888')} ${moedaEscolhida2.fontcolor('#888')}`;
+                        document.querySelector('.telaRes').setAttribute('style','display:block');
+                }     
+            } 
+
+         } 
+
+       function escolhaMoeda1(){
+           if(moeda1[0].checked){
+               moedaEscolhida1 = "USD";
+           }
+           else if(moeda1[1].checked){
+               moedaEscolhida1 = "KZ";
+           }
+           else if(moeda1[2].checked){
+               moedaEscolhida1 = "R$";
+           }
+           else if(moeda1[3].checked){
+               moedaEscolhida1 = "EUR";
+           }
+           document.querySelector('#dinExt').innerHTML = "";
+       }
+       function escolhaMoeda2(){
+           
+           if(moeda2[0].checked){
+               moedaEscolhida2 = "USD";
+           }
+           else if(moeda2[1].checked){
+               moedaEscolhida2 = "KZ";
+           }
+           else if(moeda2[2].checked){
+               moedaEscolhida2 = "R$";
+           }
+           else if(moeda2[3].checked){
+               moedaEscolhida2 = "EUR";
+           }
+           document.querySelector('#dinExt').innerHTML = "";
+       }
+
+       var kwanza = {
+           valorEmDolar:0.006057,
+           valorEmReais:0.01958,
+           valorEmEuro:0.005075
+       }
+       var dolar = {
+           valorEmKwanza:165.1,
+           valorEmReais:3.2327,
+           valorEmEuro:0.8378
+       }
+       var reais = {
+           valorEmKwanza:51.071,
+           valorEmDolar:0.3093,
+           valorEmEuro:0.2592
+       }
+       var euro = {
+           valorEmKwanza:197.06,
+           valorEmDolar:1.1936,
+           valorEmReais:3.8585
+       }
+
+       function cambiar(dinheir,de,para){
+
+        var res = 0;
+
+            if(de =="USD"){
+                if(para =="KZ"){
+                    res = dolar.valorEmKwanza * dinheir; 
+                }
+                else if(para =="R$"){
+                    res = dolar.valorEmReais * dinheir;  
+                }
+                else if(para =="EUR"){
+                    res = dolar.valorEmEuro * dinheir;
+                }
+            }
+
+            if(de =="KZ"){
+                if(para =="USD"){
+                    res = kwanza.valorEmDolar * dinheir; 
+                }
+                else if(para =="R$"){
+                    res = kwanza.valorEmReais * dinheir;  
+                }
+                else if(para =="EUR"){
+                    res = kwanza.valorEmEuro * dinheir;
+                }
+            }
+
+            if(de =="R$"){
+                if(para =="USD"){
+                    res = reais.valorEmDolar * dinheir; 
+                }
+                else if(para =="KZ"){
+                    res = reais.valorEmKwanza * dinheir;  
+                }
+                else if(para =="EUR"){
+                    res = reais.valorEmEuro * dinheir;
+                }
+            }
+            if(de =="EUR"){
+                if(para =="USD"){
+                    res = euro.valorEmDolar * dinheir; 
+                }
+                else if(para =="KZ"){
+                    res = euro.valorEmKwanza * dinheir;  
+                }
+                else if(para =="R$"){
+                    res = euro.valorEmReais * dinheir;
+                }
+            }
+            return res.toFixed(2);
+       }
+
+    </script>
+
+</body>
+</html>

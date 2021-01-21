@@ -1,0 +1,3 @@
+﻿Depois de inserir os dados de todas as disciplinas é dada as seguintes informações:
+
+4

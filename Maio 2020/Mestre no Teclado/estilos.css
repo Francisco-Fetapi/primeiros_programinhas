@@ -1,0 +1,120 @@
+body{
+    overflow: hidden;
+}
+.letra{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size:190%;
+    box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.527),inset 2px 3px 5px rgba(0, 0, 0, 0.76);;
+    color: white;
+    text-shadow: 1px 0px 5px black ;
+    font-weight: 500;
+    position: absolute;
+    font-family: cursive;
+}
+header{
+    background-color: rgba(95, 158, 160, 0.432);
+    font-size:12px;
+    padding-top:12px;
+}
+header span[id]{
+    font-weight: bold;
+    font-size:13px;
+}
+.progresso{
+    height:40px;
+    background-color: rgba(34, 101, 178, 0.562);
+    top:0;
+    left: 0;
+    position: absolute;
+    transition: all .8s linear;
+}
+#modalInicio .modal-content{
+    background-color: rgba(30, 138, 210, 0.541);
+    color: white;
+}
+#modalInicio{
+    margin-top: 20vh;
+}
+#modalPerda,#modalGanho{
+    margin-top:40vh;
+}
+.a{
+    background-color: chocolate;
+}
+.b{
+    background-color: hotpink;
+}
+.c{
+    background-color: rgb(214, 108, 108);
+}
+.d{
+    background-color: rgb(108, 214, 126);
+}
+.e{
+    background-color: rgb(133, 177, 116);
+}
+.f{
+    background-color: rgb(196, 29, 29);
+}
+.g{
+    background-color: lightsalmon;
+}
+.h{
+    background-color: midnightblue;
+}
+.i{
+    background-color: orange;
+}
+.j{
+    background-color: orangered;
+}
+.k{
+    background-color: peru;
+}
+.l{
+    background-color: purple;
+}
+.m{
+    background-color: sienna;
+}
+.n{
+    background-color: steelblue;
+}
+.o{
+    background-color: violet;
+}
+.p{
+    background-color: darkgray;
+}
+.q{
+    background-color: darkviolet;
+}
+.r{
+    background-color: fuchsia;
+}
+.s{
+    background-color: mediumspringgreen;
+}
+.t{
+    background-color: seagreen;
+}
+.u{
+    background-color: brown;
+}
+.v{
+    background-color: cyan;
+}
+.w{
+    background-color: darkblue;
+}
+.x{
+    background-color: darkcyan;
+}
+.y{
+    background-color: darkslateblue;
+}
+.z{
+    background-color: deepskyblue;
+}

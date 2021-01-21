@@ -1,0 +1,4 @@
+﻿As negativas e as positivas são todas coloridas!
+
+o programinha tambem tem a funçao de busca, ja que estou usando vetores, este trabalhinho foi bem simples!
+Buscar pelo nome da disciplina vai mostrar o quanto vc teve nela e vice-versa(pela nota encontrar as respectivas disciplinas).

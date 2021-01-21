@@ -1,0 +1,4 @@
+implementei o Programa pra 2 jogadores, cada digita uma palavra com no minimo e no máximo 5 caracteres.
+na imagem a seguir tentei infligir essa regra... e .....OOOOPS!!
+
+2

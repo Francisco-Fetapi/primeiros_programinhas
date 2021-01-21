@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anima quadrado</title>
+
+    <style>
+        @charset "utf-8";
+       
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.582);
+            margin-left:auto;
+            margin-right: auto;
+            max-width:600px;
+            font:normal 16pt arial;
+            overflow: hidden;
+         }
+         section{
+            border-radius: 4px;
+            padding:6px;
+            background-color: rgba(11, 144, 252, 0.801);
+            width:95%;  
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534);
+        }
+        #exercicio{
+            margin-top:0%;
+            transition: all 2.5s linear;
+        }
+        #exercicio.sai{
+            margin-top: -100%;
+        }
+        #DescEx{
+            text-shadow: 2px 1px 1px black;
+            padding: 16px;
+            background: rgb(45, 143, 182);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+        #DescEx h1{
+            font-weight: 600px;
+            background-color: rgba(0, 0, 0, 0.466);
+            text-align: left;
+            margin: -16px;
+            margin-bottom: 12px;
+        }
+        #DescEx p{
+            font-size:19px;
+        }
+        #DescEx p span{
+            font-size:26px;
+            color: red;
+        }
+        .principal{
+            padding:14px 22px;
+            color: white;
+            line-height: 2.1;
+        }
+        .botao{
+            width:100%;
+            padding: 12px;
+            text-align: center;
+            color: rgb(0, 253, 241);
+            font-weight: 600;
+            background-color: rgba(0, 204, 255, 0.295);
+            border: 4px solid rgba(0, 204, 255, 0.644);
+            border-radius: 4px;
+            font-size:21px;
+            box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.349);
+            margin-left: -12px;
+            transition: background-color .1s ease-in;
+        }
+        .botao:hover{
+            color: white;
+            background-color: rgba(0, 204, 255, 0.87);
+        }
+        .botao:active{
+            background-color: rgba(3, 3, 0, 0.589);
+        }
+        b{
+            color: rgba(218, 42, 42, 0.541);
+            text-decoration: underline;
+        }
+        #quadrado{
+            width:95px;
+            height:85px;
+            border-radius:50%;
+            border: 10px solid white;
+            position: absolute;
+            top: -50%;
+            font-size:16px;
+            font-weight: 800;
+            text-shadow: 1px 1px 1px white;
+            transition: all 2.5s linear;
+        }
+        #quadrado.i-animacao{
+            animation-name:move;
+            animation-iteration-count:infinite;
+            animation-duration: 20s;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+        #quadrado span{
+            position: absolute;
+            top:38%;
+            left:12%;
+        }
+        @keyframes move {
+            0%{
+                top:0%;
+                left: 0%;
+            }
+            10%{
+                top:45%;
+                left:80%;
+            }
+            20%{
+                top:90%;
+                left:0%;
+            }
+            30%{
+                top:0%;
+                left: 0%; 
+            }
+            40%{
+                left:40%;
+                top:45%;
+            }
+            50%{
+                top:90%;
+            }
+            60%{
+                top:0%;
+                left:80%;
+            }
+            70%{
+                left:80%;
+                top:90%;
+            }
+            80%{
+                top:90%;
+                left:0%;
+            }
+            90%{
+                left:0%;
+                top:0%;
+            }
+            100%{
+                top:90%;
+                left:0%; 
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="quadrado">
+        <span id="timer">100s:98ms</span>
+    </div>
+
+    <section id="exercicio">
+        <div id="DescEx">
+            <h1>Anima quadrado</h1>
+            <p><span>Ex.:03</span>
+                Construa um programa que exiba um quadrado na tela , e faça com que o mesmo se movimente na tela em direções aleatorias, e que a cada <b>5s</b> o quadrado mude de cor. O quadrado tem de ter como conteudo um timer(temporizador) para que assim que se completem <b>100s</b> o quadrado pare.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="principal">
+        <button onclick="comecar()" class="botao">Começar a animação</button>
+    </section>
+
+    <script>
+        var divExer = document.querySelector('#exercicio');
+        var divQuadrado = document.querySelector('#quadrado');
+        var cores = ['#cd2','#c12','#bcb','#12d','#21a','#1d1','#00c','#da2','#22c'];
+        var cores2 = ['red','blue','green','orange','gray','orangered','cyan','lightblue'];
+        
+        class Contador{
+            constructor(segundos,milissegundos,contarAte,idElemento){
+                this.segundos = segundos;
+                this.milissegundos = milissegundos;
+                this.elemento = idElemento;
+                this.intervalo;
+                this.contarAte = contarAte;
+            }
+            loopDoTempo(){
+                this.intervalo = setInterval(() => {
+                    this.milissegundos++;
+                    if(this.milissegundos == 100){
+                        this.milissegundos = 0;
+                        this.segundos++;
+                        if(this.segundos%3 == 0){
+                            mudaColor();
+                        }
+                        if(this.segundos == this.contarAte){
+                            this.parar()
+                        }
+                    }
+                    window.document.querySelector(this.elemento).innerHTML = `${this.segundos}s:${this.milissegundos}ms `;
+                },10);
+            }
+            comeca(){
+                estaContando = true;
+                this.loopDoTempo();
+            }
+            parar(){
+                estaContando = false;
+                pararQuadrado();
+                clearInterval(this.intervalo);
+            }
+        }
+        var Contagem = new Contador(0,0,100,'#timer');
+        var estaContando = true;
+        mudaColor();
+        function comecar(){
+            divExer.classList.add('sai');
+            divQuadrado.classList.add('i-animacao');
+
+            Contagem.comeca();
+        }
+        function mudaColor(){
+            
+            if(estaContando){
+                var indCorAleat =  Math.floor(Math.random() * cores.length);
+                var corAleatoria = cores[indCorAleat];
+
+                var indCorAleat2 =  Math.floor(Math.random() * cores2.length);
+                var corAleatoria2 = cores2[indCorAleat2];
+
+                divQuadrado.style.background = corAleatoria;
+                
+                divQuadrado.style.borderColor = corAleatoria2;
+            }
+            console.log('mudar cor para '+corAleatoria);
+        }
+        function pararQuadrado(){
+            var leftAt = divQuadrado.offsetLeft;
+            var topAt = divQuadrado.offsetTop;
+
+            divQuadrado.classList.remove('i-animacao');
+
+            divQuadrado.style.top = topAt+'px';
+            divQuadrado.style.left = leftAt+'px';
+            
+            console.log(leftAt,topAt);
+        }
+    </script>
+
+</body>
+</html>

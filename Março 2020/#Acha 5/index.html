@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acha-5</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+   
+    <section id="DescEx">
+            <h1>EXERCÍCIO</h1>
+            <p><span>6.5.3</span>
+            Dois jogadores, cada um pensa uma palavra de 5 letras diferentes, sem acentos. Um tenta adivinhar primeiro a palavra que o outro escolheu. Alternadamente, cada um submete ao outro uma palavra também de 5 letras, sem regras. O outro vai informar quantas letras daquela palavra estão presentes na sua palavra secreta. Com base nessa informação e, através de lógica, as letras vão sendo eliminadas ou descobertas. Por exemplo, suponha que a palavra secreta do jogador 1é"zinco". Se o jogador 2 disser "arara", o jogador 1 informa "zero", jáque nem o "a" nem o "r" ocorrem em "zinco". O jogador 2 então elimina as duas letras. Se a palavra dita for "ossos", o jogador 1 informa "uma", que pode ser "o" ou "s". Neste ponto (e na sua próxima jogada), o jogador 2 pode dizer "esses" e, ao ser informado que házero ocorrências, elimina o "e" e o "s" e descobre em "ossos" que a letra "o" pertenceàpalavra secreta do jogador 1. Implemente esse jogo, com um banco de palavras de 5 letras para que o computador sorteie a sua palavra secreta </p>
+           </section>
+    
+    <section>
+
+        <div id="inicio">
+            <h1>Acha-5</h1>
+            <br/>
+            <p class="texto1">Palavra do jogador1:
+                <input type="password" name="" id="pal1" maxlength="5" size="5" class="n">
+            </p>
+
+            <p class="texto1">Palavra do jogador2:
+                <input type="password" name="" id="pal2" maxlength="5" size="5" class="n">
+            </p>
+
+            <div class="aviso">
+
+            </div>
+            <p>
+                <input type="button" class="btn btn2" value="Começar Jogo" onclick="comecar()">
+            </p>
+        </div>
+
+        <div id="joga">
+            <h1>Acha-5</h1>
+
+            <div id="div1" class="divjog" >
+                <p class="texto2">Palavra de Teste(Jog1)
+                    <input type="text" class="n" id="palt1" maxlength="5" size="5">
+                    
+                </p>
+                <div class="avisoT" id="aviso1">A palavra de Teste tem de ter no maximo e no minimo 5 caracteres</div>
+             <input type="button" id="btn1" class=" btn btn1" value="Testar" onclick="testar1(aviso1)">
+            </div>
+
+            <div id="div2" class="divjog">
+                <p class="texto2">Palavra de Teste(Jog2)
+                <input type="text" class="n" id="palt2" maxlength="5" size="5" disabled>
+                </p>
+                <div class="avisoT" id="aviso2">A palavra de Teste tem de ter no maximo e no minimo 5 caracteres</div>
+                <input type="button" id="btn2" class="btn btn1" value="Testar" onclick="testar2(aviso2)" disabled>
+            </div>
+
+            <div class="res">
+                <div >
+                    <h2>Jogador1</h2>
+                    <p>Mensagem:<span id="msg1"></span></p>
+                    <p>Letras Descobertas(Possiveis):
+                        <input type="text" class="n1"  placeholder="Anotações" size="8">
+                    </p>
+                    <p>Quantidade de letras Descobertas: <span id="qtD1">0</span></p>
+
+                    
+                    <p>A Palavra é:
+                        <input type="text" class="n1" placeholder="Será que sabes?" size="16" oninput="verifica(this,pal2,'jog1')"  maxlength="5">
+                    </p>
+
+                </div>
+
+               
+
+                <div >
+                    <h2>Jogador2</h2>
+                    <p>Mensagem:<span id="msg2"></span></p>
+                    <p>Letras Descobertas(Possiveis):
+                        <input type="text" class="n1" id="" placeholder="Anotações" size="8">
+                    </p>
+                    <p>Quantidade de letras Descobertas: <span id="qtD2">0</span></p>
+
+                    </p>
+                    <p>A Palavra é:
+                        <input type="text" class="n1" placeholder="Será que sabes?" size="16" oninput="verifica(this,pal1,'jog2')" maxlength="5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;Exercicios Francisco Fetapi</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

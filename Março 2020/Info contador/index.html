@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Contagem</title>
+
+    <style>
+        @charset "utf-8";
+       
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.582);
+            margin-left:auto;
+            margin-right: auto;
+            max-width:600px;
+            font:normal 16pt arial;
+            overflow-x: hidden;
+         }
+         section{
+            border-radius: 4px;
+            padding:6px;
+            background-color: rgba(11, 144, 252, 0.801);
+            width:95%;  
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534);
+        }
+        #exercicio{
+            margin-top: 20%;
+            transition: all .5s linear;
+        }
+        #exercicio.sobe{
+            margin-top: 0%;
+        }
+        #DescEx{
+            text-shadow: 2px 1px 1px black;
+            padding: 16px;
+            background: rgb(45, 143, 182);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+        #DescEx h1{
+            font-weight: 600px;
+            background-color: rgba(0, 0, 0, 0.466);
+            text-align: left;
+            margin: -16px;
+            margin-bottom: 12px;
+        }
+        #DescEx p{
+            font-size:19px;
+        }
+        #DescEx p span{
+            font-size:26px;
+            color: red;
+        }
+        .principal{
+            padding:14px 22px;
+            color: white;
+            line-height: 2.1;
+        }
+        .cxTexto{
+            padding:4px 6px;
+            font-size:16px;
+            background-color: rgba(0, 0, 0, 0.719);
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        .cxTexto:focus{
+            background-color: rgba(0, 0, 0, 0.911);
+        }
+        .botao{
+            width:100%;
+            padding: 12px;
+            text-align: center;
+            color: rgb(0, 253, 241);
+            font-weight: 600;
+            background-color: rgba(0, 204, 255, 0.295);
+            border: 4px solid rgba(0, 204, 255, 0.644);
+            border-radius: 4px;
+            font-size:21px;
+            box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.349);
+            margin-left: -12px;
+            transition: background-color .1s ease-in;
+        }
+        .botao:hover{
+            color: white;
+            background-color: rgba(0, 204, 255, 0.87);
+        }
+        .botao:active{
+            background-color: rgba(3, 3, 0, 0.589);
+        }
+        .telaRes{
+            display: none;
+        }
+        b{
+            color: rgb(185, 83, 83);
+            text-decoration: underline;
+        }
+        ul{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        ul li{
+            margin: 0px;
+            padding:0px;
+            border: none;
+            border-bottom:1px solid white;
+        }
+        li.marcar{
+            background-color: rgba(0, 0, 0, 0.658);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <section id="exercicio">
+        <div id="DescEx">
+            <h1>Info contagem</h1>
+            <p><span>Ex.:01</span>
+                Faça um algoritmo para realizar uma contagem com um intervalo definido pelo usuario e ao final mostrar o <b>INICIO</b> da contagem o <b>MEIO</b> e o <b>FINAL!</b> 
+            </p>
+        </div>
+
+    </section>
+
+    <section class="principal">
+        <p>De:
+            <input type="number" class="cxTexto" id="de" placeholder="Começo">
+        </p>
+        <p>Ate:
+            <input type="number" class="cxTexto" id="ate" placeholder="Fim">
+        </p>
+        <button onclick="contar()" class="botao">Iniciar contagem</button>
+
+    </section>
+
+    <section class="principal telaRes">
+        <ul id="res">
+            <!-- aqui vai aparecer a contagem -->
+        </ul>
+    </section>
+
+    <script>
+            var de = document.querySelector('#de');
+           var ate = document.querySelector('#ate');
+           var resultados = [];
+
+       function contar(){
+            resultados = [];
+            document.querySelector('#res').innerHTML = '';
+            if(de.value == '' || isNaN(de.value) || ate.value == '' || isNaN(ate.value)){//se caixaDeTexto num estiver vazia
+                window.alert('Nenhum dos campos pode ficar vazio e apenas podem ser inseridos numeros!');
+            }
+            else{//senao estiver vazia
+                if(Number(de.value)>Number(ate.value)){
+                    window.alert('O inicio tem de ser menor que o final');
+                }else{
+                    for(c = Number(de.value);c<=Number(ate.value);c++){
+                        if(c == Number(de.value)){
+                            resultados.push(c+" é o primeiro número");
+                        }else if( c == Number(ate.value)){
+                                resultados.push(c+" é o último número");
+                        }else{
+                            resultados.push(c);
+                        }
+                    }
+                }
+                function achaMeio(vetor){
+                    tam = vetor.length;
+                    posNumMeio = Math.floor(tam/2);
+
+                    resultados[posNumMeio] = resultados[posNumMeio]+" é o número do meio";
+                }
+
+                if(resultados.length%2 != 0){ //é impar, se o tamanho do vetor for impar entao tem um meio
+                    achaMeio(resultados);
+                }else{
+                    window.alert('O intervalo nao tem um meio');
+                }
+
+                document.querySelector('#exercicio').classList.add('sobe');
+                document.querySelector('.telaRes').setAttribute('style','display:block');
+                resultados.forEach(function(elem,ind){
+                    if(String(elem).indexOf('número') > -1){
+                        document.querySelector('#res').innerHTML +=`<li class='marcar'>${elem}</li>`;
+                    }else{
+                        document.querySelector('#res').innerHTML +=`<li>${elem}</li>`;
+                    }
+                })
+            }      
+       }
+
+    </script>
+
+</body>
+</html>

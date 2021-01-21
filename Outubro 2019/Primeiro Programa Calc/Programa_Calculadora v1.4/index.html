@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<!-- Created Using Easy HTML v1.2.5 -->
+<!-- https://play.google.com/store/apps/details?id=ak.andro.easyhtml -->
+
+
+<html>
+<head>
+<title>Programa Calculadora</title>
+<link rel="stylesheet" href="style.css">
+<meta cherset="utf-8"/>
+</head>
+<body> 
+<h1 id="titulo">Programa Calculadora</h1>
+ <br/>
+  <h2 id="titulo2">Insira o Primeiro Número</h2>
+<input type="text" id="num1">
+  <br/>
+  <br/>
+  <h2 id="titulo3">Insira o Segundo Número</h2>
+<input type="text" id="num2">
+  
+
+  
+  <div id="div2">
+    
+     
+<br/>
+
+  <input type="submit" id="Soma" value="Somar" onClick="Somar() , arquivar()">
+  <br/>
+  <input type="submit" id="Subtracao" value="Subtrair" onClick="Subtrair() , arquivar()">
+  <br/>
+  <input type="submit" id="Multiplicacao" value="Multiplicar" onClick="Multiplicar() , arquivar()">
+  <br/>
+   <input type="submit" id="Divisao" value="Dividir" onClick="Dividir() , arquivar()">
+ <br/>
+     <input type="submit" value="Limpar Tudo" onClick="Limpar()" id="btn">
+    <input type="submit" value="O Resultado" onClick="Resultado()" id="btn1">
+  <input type="submit" value="Limpar Hist." id="btn2" onClick="LimparH()">
+  
+  </div>
+  
+  <div id="div3">
+    
+    <p id="result">0 + 0 = 0</p>
+  
+  </div>
+
+
+   <div id="divh"> 
+ </div>
+  
+  
+<div id="div4">
+</div>
+  
+<script src="script.js"></script>
+</body>
+</html>

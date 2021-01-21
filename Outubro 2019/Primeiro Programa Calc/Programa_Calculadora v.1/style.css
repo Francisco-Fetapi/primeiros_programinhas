@@ -1,0 +1,127 @@
+/* Created Using Easy HTML v1.2.5 */
+/* https://play.google.com/store/apps/details?id=ak.andro.easyhtml */
+
+body{
+  background-color:#3aa975;
+  }
+
+#div2{
+  width:100%;
+  background-color: #35cbae;
+  height:41%;
+  margin-bottom:0;
+  padding-bottom:0;
+  }
+
+#titulo{
+  background-color:#4cdefe;
+  text-align:center;
+  width:50%;
+  margin:0 auto 0 auto;
+  
+  }
+
+#titulo2{
+  background-color:#0096ff;
+  text-align:left;
+  width:50%;
+  
+  
+  }
+
+#titulo3{
+  background-color:#ba0404;
+  text-align:left;
+  width:50%;
+  
+  
+  }
+
+
+#num1 , #num2{
+  transition-duration:2s;
+  height:1cm;
+  width:6cm;
+  outline:none;
+  font-size:30px;
+  border-color:black;
+  }
+
+#num1{
+  color:#0096ff;
+  }
+#num2{
+  color:#ba0404;
+  }
+
+#num1:focus,#num2:focus{
+  transition-duration:2s;
+  background-color:#ccd9d8;
+  height:1cm;
+  width:6cm;
+  border-radius:25px;
+  outline:none;
+  font-size:35px;
+  }
+
+#Soma , #Subtracao , #Multiplicacao , #Divisao{
+  width:70%;
+  height:40px;
+  text-align:center;
+  margin-left:15%;
+  margin-bottom:15px;
+  outline:none;
+  border-radius:30px;
+  font-size:20px;
+  }
+
+#Soma{
+  transition-duration:2s;
+  background-color:#c5d309;
+  }
+#Soma:focus{
+  transition-duration:2s;
+  background-color:#f9ff00;
+  }
+
+#Subtracao{
+  transition-duration:2s;
+  background-color:#44b2cf;
+  }
+#Subtracao:focus{
+  transition-duration:2s;
+  background-color:#00e2ff;
+  }
+
+
+#Multiplicacao{
+  transition-duration:2s;
+  background-color:#4810c0;
+  }
+#Multiplicacao:focus{
+  transition-duration:2s;
+  background-color:#5200ff;
+  }
+
+
+#Divisao{
+  transition-duration:2s;
+  background-color:#be0d0d;
+  }
+#Divisao:focus{
+  transition-duration:2s;
+  background-color:red;
+  }
+
+#div3{
+  margin-top:0;
+  padding-top:0;
+  float:top;
+  height:22%;
+  background-color: #ffffff;
+  }
+
+#result{
+  font-size:50px;
+  
+  }

@@ -1,0 +1,16 @@
+Depois de se clicar no btn jogar, o jogo começa.
+e como podem ver nas caixas de texto pra adivinhar a palavra do oponente tambem tem validação de dados.
+
+Enquanto um jogador tenta a sorte o outro tem de esperar , por isso as caixas de texto e o botão do Jog2 estão pretas e desabilitadas,significando que ele não pode "Testar" ainda!
+
+Tentei inserir "gest" ,mas n deu depois inseri "gesto" e cliquei.
+
+quando cliquei automaticamente o Jog1 ficou inabilitado , e o jog2 ficou livre de "Testar" se a palavra do jog1 foi "gente", mas ele não deu sorte.
+
+"gesto" tem 1 letra da palavra "mundo"!
+
+
+3 imagens
+41
+5
+5.1

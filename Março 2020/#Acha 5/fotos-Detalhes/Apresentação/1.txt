@@ -1,0 +1,6 @@
+Recentemente estou a exercitar Js criando programinhas básicos me baseando num livro com lista de vários exercícios pra resolver em qualquer linguagem de programação.
+
+Um dos exercicios foi este daqui:
+
+!1
+1

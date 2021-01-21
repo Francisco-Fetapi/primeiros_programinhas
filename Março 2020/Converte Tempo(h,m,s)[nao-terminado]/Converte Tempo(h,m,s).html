@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converte Tempo(h,m,s)</title>
+
+    <style>
+        @charset "utf-8";
+       
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.582);
+            margin-left:auto;
+            margin-right: auto;
+            font:normal 16pt arial;
+            overflow-x: hidden;
+         }
+         section{
+            border-radius: 4px;
+            padding:6px;
+            background-color: rgba(11, 144, 252, 0.801);
+            width:95%;  
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534);
+        }
+        #exercicio{
+            margin-top: 2%;
+            padding: 6px 11px;
+        }
+        #DescEx{
+            text-shadow: 2px 1px 1px black;
+            padding: 16px;
+            background: rgb(45, 143, 182);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        #DescEx h1{
+            font-weight: 600px;
+            background-color: rgba(0, 0, 0, 0.466);
+            text-align: left;
+            margin: -16px;
+            margin-bottom: 2px;
+        }
+        #DescEx p{
+            font-size:19px;
+        }
+        #DescEx p span{
+            font-size:26px;
+            color: red;
+        }
+        .principal{
+            padding:14px 22px;
+            color: white;
+            line-height: 2.1;
+        }
+        .cxTexto{
+            padding:4px 6px;
+            font-size:16px;
+            background-color: rgba(0, 0, 0, 0.719);
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        .cxTexto:focus{
+            background-color: rgba(0, 0, 0, 0.911);
+        }
+        .botao{
+            width:100%;
+            padding: 12px;
+            text-align: center;
+            color: rgb(0, 253, 241);
+            font-weight: 600;
+            background-color: rgba(0, 204, 255, 0.295);
+            border: 4px solid rgba(0, 204, 255, 0.644);
+            border-radius: 4px;
+            font-size:16px;
+            box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.349);
+            margin-left: -12px;
+            transition: background-color .1s ease-in;
+        }
+        .botao:hover{
+            color: white;
+            background-color: rgba(0, 204, 255, 0.87);
+        }
+        .botao:active{
+            background-color: rgba(3, 3, 0, 0.589);
+        }
+        .telaRes{
+            line-height:1.9;
+            font-size:smaller;
+            display: none;
+        }
+        .telaRes span{
+            text-shadow: 4px 1px 2px rgba(0, 0, 0, 0.288);
+            font-size: 18pt;
+            font-weight: 700;
+        }
+        h4{
+            padding: 2px 4px;
+            margin: -14px;
+            margin-bottom: 0px;
+            background-color: rgba(0, 0, 0, 0.212);
+        }
+        label{
+            color: white;
+            font-size: 14px;
+            padding: 9px;
+            border-radius: 10%;
+            width:60px;
+            height: 60px;
+            border: 1px solid rgba(0, 0, 0, 0.308);
+        }
+        label:hover{
+            background-color: rgba(0, 0, 0, 0.534);
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        input[type="radio"]:checked + label{
+            background-color: rgba(0, 0, 0, 0.836);
+            border-color:white;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="exercicio">
+        <div id="DescEx">
+            <h1 style="font-size: 35px;">Converte Tempo(h,m,s,ms)</h1>
+            <p><span>Ex.:7</span>
+                Faça um algoritmo que lê um valor monetario e permita que o mesmo seja convertido de moeda para outra!
+            </p>
+        </div>
+
+    </div>
+
+    <section class="principal">
+        <h4>De :</h4>
+        <p>
+            <input type="radio" id="h1" name="tempo1" checked><label for="h1">Hora</label>
+            <input type="radio" id="M1" name="tempo1" ><label for="M1">Minuto</label>
+            <input type="radio" id="s1" name="tempo1" ><label for="s1">Segundo</label>
+            <input type="radio" id="m1" name="tempo1" ><label for="m1">Milessegundo</label>
+        </p>
+        
+        <p>O Tempo desejado:
+            <input type="number" class="cxTexto" id="din" placeholder="Quanto tempo?">
+        </p>
+        
+        <h4 style="margin-top: 8px;">Converter para:</h4>
+        <p>
+            <input type="radio" id="h2" name="tempo2" checked><label for="h2">Hora</label>
+            <input type="radio" id="M2" name="tempo2" ><label for="M2">Minuto</label>
+            <input type="radio" id="s2" name="tempo2" ><label for="s2">Segundo</label>
+            <input type="radio" id="m2" name="tempo2" ><label for="m2">Milessegundo</label>
+        </p>
+            <button class="botao" onclick="converteMoedas(din.value)">Converter Dinheiro</button>
+    </section>
+
+    <section class="principal telaRes">
+        <p><span id="dinExt"></span></p>
+    </section>
+
+    <script>
+            var moedaEscolhida1 = "USD";
+            var moedaEscolhida2 = "KZ";
+
+       const tempo1 = document.getElementsByName('tempo1');
+       const tempo2 = document.getElementsByName('tempo2');
+       
+       for(var c = 0;c <tempo1.length;c++){
+            tempo1[c].addEventListener('click',escolhaT1);
+        }
+        for(var c = 0;c <tempo2.length;c++){  
+            tempo2[c].addEventListener('click',escolhaT2);
+        }
+
+       function converteMoedas(dinheiro){
+           var soma = 0;
+
+           document.querySelector('#dinExt').innerHTML = "";
+           
+            if(dinheiro == "" ){
+                window.alert('Preencha os dados corretamente! \nInsira Apenas numeros! \n Insira virgula nos numeros decimais');
+            }
+            else{
+               if(Math.round(dinheiro) != dinheiro){
+                   window.alert("O Dinheiro inserido é uma dizima! por isso vamos arredondá-lo")
+                   var novoDin = Math.round(dinheiro);
+                   document.querySelector('#din').value = novoDin;    
+               }
+               else{                
+                        document.querySelector('#dinExt').innerHTML += `${dinheiro.fontcolor('#888')} ${moedaEscolhida1.fontcolor('#888')} equivale à ${cambiar(dinheiro,moedaEscolhida1,moedaEscolhida2).fontcolor('#888')} ${moedaEscolhida2.fontcolor('#888')}`;
+                        document.querySelector('.telaRes').setAttribute('style','display:block');
+                }     
+            } 
+
+         } 
+
+       function escolhaT1(){
+
+            if(tempo1[0].checked){
+                return "h";
+            }
+            else if(tempo1[1].checked){
+                return "M";
+            }
+            else if(tempo1[2].checked){
+                return "s";
+            }   
+            else if(tempo1[4].checked){
+                return "m";
+            }   
+
+           document.querySelector('#dinExt').innerHTML = "";
+       }
+       function escolhaT2(){
+       
+        if(tempo2[0].checked){
+                return "h";
+            }
+            else if(tempo2[1].checked){
+                return "M";
+            }
+            else if(tempo2[2].checked){
+                return "s";
+            }   
+            else if(tempo2[4].checked){
+                return "m";
+            }
+           document.querySelector('#dinExt').innerHTML = "";
+       }
+
+       var hora = {
+           minutos:60,
+           segundos:3600,
+           milissegundos:3600000
+       }
+       var minuto = {
+           horas:0.016,
+           segundos:60,
+           milissegundos:60000
+       }
+       var segundo = {
+           horas:0.00027,
+           minutos:0.16,
+           milissegundos:1000
+       }
+       var milissegundo = {
+           horas:,
+           minutos:0.16,
+           milissegundos:1000
+       }
+
+       function converte(temp1,temp2){
+
+            if(temp1='h'){
+                if(temp2 = 'M'){
+
+                }
+                else if(temp2 ='s'){
+
+                }
+                else if(temp2='m'){
+
+                }
+
+            }
+
+
+       }
+
+
+    </script>
+
+</body>
+</html>

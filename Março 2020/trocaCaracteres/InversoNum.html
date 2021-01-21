@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca Valores</title>
+
+    <style>
+        @charset "utf-8";
+       
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.582);
+            margin-left:auto;
+            margin-right: auto;
+            font:normal 16pt arial;
+            overflow-x: hidden;
+         }
+         section{
+            border-radius: 4px;
+            padding:6px;
+            background-color: rgba(11, 144, 252, 0.801);
+            width:95%;  
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534);
+        }
+        #exercicio{
+            margin-top: 20%;
+        }
+        #DescEx{
+            text-shadow: 2px 1px 1px black;
+            padding: 16px;
+            background: rgb(45, 143, 182);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+        #DescEx h1{
+            font-weight: 600px;
+            background-color: rgba(0, 0, 0, 0.466);
+            text-align: left;
+            margin: -16px;
+            margin-bottom: 12px;
+        }
+        #DescEx p{
+            font-size:19px;
+        }
+        #DescEx p span{
+            font-size:26px;
+            color: red;
+        }
+        .principal{
+            padding:14px 22px;
+            color: white;
+            line-height: 2.1;
+        }
+        .cxTexto{
+            padding:4px 6px;
+            font-size:16px;
+            background-color: rgba(0, 0, 0, 0.719);
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        .cxTexto:focus{
+            background-color: rgba(0, 0, 0, 0.911);
+        }
+        .botao{
+            width:100%;
+            padding: 12px;
+            text-align: center;
+            color: rgb(0, 253, 241);
+            font-weight: 600;
+            background-color: rgba(0, 204, 255, 0.295);
+            border: 4px solid rgba(0, 204, 255, 0.644);
+            border-radius: 4px;
+            font-size:21px;
+            box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.349);
+            margin-left: -12px;
+            transition: background-color .1s ease-in;
+        }
+        .botao:hover{
+            color: white;
+            background-color: rgba(0, 204, 255, 0.87);
+        }
+        .botao:active{
+            background-color: rgba(3, 3, 0, 0.589);
+        }
+        .telaRes{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <section id="exercicio">
+        <div id="DescEx">
+            <h1>Inverte Valores</h1>
+            <p><span>Ex.:02</span>
+                Faça um algoritmo para ler 1 numero inteiro e depois mostrar o inverso daquele número
+            </p>
+        </div>
+
+    </section>
+
+    <section class="principal">
+        <p>Digite qualquer coisa:
+            <input type="text" class="cxTexto" id="caracter" placeholder="Digite algum número ou texto" size="26">
+        </p>
+        <button onclick="inverterNum()" class="botao">Inverter Caractere</button>
+
+    </section>
+
+    <section class="principal telaRes">
+        <p>O Valor na forma invertida: <span id="caractere"></span>
+        </p>
+    </section>
+
+    <script>
+       function inverterNum(){
+           var caracter = document.querySelector('#caracter');
+           var tamCaractere = caracter.value.length;
+           
+            if(tamCaractere == 0){//se caixaDeTexto num estiver vazia
+                window.alert('Nenhum dos campos pode ficar vazio!')
+            }
+            else{//senao estiver vazia
+                var novoCaracter = "";
+
+                for(var i = tamCaractere;i>=0;i--){
+                    novoCaracter += caracter.value.substr(i,1);
+                }
+
+                document.querySelector('.telaRes').setAttribute('style','display:block');
+                document.querySelector('#caractere').innerHTML = novoCaracter;
+            }      
+       }
+
+    </script>
+
+</body>
+</html>

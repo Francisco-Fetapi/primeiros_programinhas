@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Created Using Easy HTML v1.2.5 -->
+<!-- https://play.google.com/store/apps/details?id=ak.andro.easyhtml -->
+
+
+<html>
+<head>
+<title>Treinar 2</title>
+<meta charset="utf-8" />
+<script type="text/js" href="JAVASCRIPT.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS.css"/>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Start your code here -->
+
+
+<fieldset>
+<legend><h3>Informações do Cliente</h3></legend>
+<br>
+<label>Nome do Cliente:<input type="text" id="nome" disabled="true" placeholder="Nome Completo"/></label> <br /> <br />
+<label>Senha do Cliente:<input type="password" id="senha" placeholder="6 digitos" maxlength="6"/></label>
+</fieldset>
+
+
+<fieldset>
+<legend><h3>Informações do Pais</h3></legend>
+
+<label>País do Cliente:<input type="search" id="pais" onchange="muda()" placeholder="Qual e o seu pais?" autofocus="on"  list="paises"  /></label>
+
+
+
+<datalist id="paises">
+
+<option>Angola 
+<option> Brasil
+<option>Portugal
+<option>Estados Unidos da America
+
+</datalist>
+<br/>
+<br />
+
+   <marquee behavior="alternate" scrollamount="5" id="mar"> 
+  <img src="" id="img" onclick="p()" width="100px" height="75px" alt="Imagem de um pais"/>
+ </marquee> 
+ 
+</fieldset>
+
+<!-- End your code here -->
+<script src="script.js"></script>
+</body>
+</html>
